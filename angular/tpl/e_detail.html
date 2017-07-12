@@ -1,0 +1,31 @@
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="container my_top" style="margin-top:60px;">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#/fw_start">首页</a>
+        </li>
+        <li>
+            详情
+        </li>
+    </ul>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="list-group">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <div style="width:150px;height:100px">
+                                <img ng-src="{{dish.uphoto}}" class="img-thumbnail" alt="11111111">
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h3>{{dish.uname}}</h3>
+                            <p>{{dish.g_content}}</p>
+                            <p class="pull-right">发布时间：{{dish.dateline}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>

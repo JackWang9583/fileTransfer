@@ -1,0 +1,192 @@
+@media (max-width: 800px) {
+    #header,#footer{
+        width:800px !important;
+    }
+    .container {
+        width: 750px;
+    }
+}
+#header{
+    width: 100%;
+    background: #ddd;
+    overflow: hidden;
+    height: 70px;
+    line-height: 70px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 5px;
+}
+.idxLoad{
+    width:30%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.idxLoad img{
+    width: 30%;
+    vertical-align: middle;
+}
+.idxLoad a{
+    font-size: 1.4em;
+    color:#CA1800;
+    font-weight: bold;
+}
+.load_list{
+    width: 70%;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.load_list li{
+    float: right;
+    margin-right: 10px;
+}
+.load_list a{
+    font-size: 1.2em;
+    color: #2A643C;
+}
+.load_list .login{
+    font-weight: bold;
+    font-size: 1em;
+    color:gray;
+}
+.load_list .login a{
+    font-size: 1em;
+    color:gray;
+}
+/*登陆模态框*/
+#login{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #ddd;
+    opacity: 0.9;
+    z-index: 100;
+}
+#login .login_box{
+    width: 30%;
+    position: absolute;
+    top: 50%;left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding:20px;
+    border-radius: 10px;
+}
+#login h2{
+    text-align: center;
+    color:gray;
+    margin-bottom: 20px;
+}
+#login form span{
+    font-size:1.3em;
+    font-weight: bold;
+    color:gray;
+    height: 35px;
+    line-height: 35px;
+}
+#login input{
+    border:1px solid gray;
+    outline: none;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 15px;
+    transition: all .5s linear;
+}
+#login input.active{
+    border-color: green;
+}
+#login input.danger{
+    border-color: red;
+}
+#login a{
+    font-size: 1.2em;
+    float: right;
+    margin-left: 15px;
+}
+#myAlert{
+    height: 60px;
+    line-height: 40px;
+    border-radius: 5px;
+    padding: 10px;
+    background: #FCF8E3;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+#myAlert .myClose{
+    float: right;
+    cursor: pointer;
+    font-weight: bold;
+}
+#myAlert span{
+    color: #8A6D3B;
+}
+#myAlert .myClose:hover{
+    font-size: 1.6em;
+    color: #4DBF12;
+}
+#login .btnbox{
+    padding-right: 0;
+}
+.subBtn{
+    width: 100%;
+    background: #ddd;
+    border: 5px;
+    border-radius: 10px;
+    font-size: 1.3em;
+}
+/*底部*/
+#footer{
+    width: 100%;
+    background: #fff;
+    border-top:1px solid gray;
+    padding-top: 10px;
+    margin-top:10px;
+}
+#foot_box ul{
+    padding: 0;
+    margin: 0;
+    padding-left: 37px;
+    position: relative;
+    list-style: none;
+}
+#foot_box li.first{
+    width: 100%;
+    float: left;
+    font-size: 1.4em;
+    font-weight: bold;
+    color:black;
+}
+#foot_box .first b{
+    display: inline-block;
+    width:32px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    background: url("../img/icon.png") no-repeat;
+}
+#foot_box li{
+    height: 32px;
+    line-height: 32px;
+    width: 50%;
+    float: left;
+}
+#foot_box .first .icon_1{
+    background-position: 0 -136px;
+}
+#foot_box .first .icon_2{
+    background-position: -32px -136px;
+}
+#foot_box .first .icon_3{
+    background-position: -64px -136px;
+}
+#footer hr{
+    width: 99%;
+    border: 1px solid gray;
+    margin: 20px 0 50px 0;
+}
+#footer .txt{
+    text-align: center;
+}
+

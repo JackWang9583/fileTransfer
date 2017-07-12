@@ -1,0 +1,41 @@
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="container my_top" style="margin-top:60px;">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h5 class="pull-left">
+                公司案例
+            </h5>
+            <a class="pull-right" href="#/fw_main">返回首页>></a>
+        </div>
+        <div class="panel-body">
+            <div class="list-group">
+                <a ng-repeat="dish in g_dish" href="#/fw_detail/{{dish.aid}}" class="list-group-item">
+                    <div class="media">
+                        <div class="media-left media-middle ">
+                            <div style="width:150px;height:100px">
+                                <img ng-src="img/{{dish.aphoto}}" class="img-responsive" alt="11111111">
+
+                            </div>
+                        </div>
+
+                        <div class="media-body">
+                            <h3>{{dish.caption}}</h3>
+
+                            <p>{{dish.acentent}}</p>
+
+                            <p>{{dish.price | currency:'￥'}} 人/天</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row" style="margin-top:-10px;margin-bottom: 10px;">
+            <div class="col-xs-6 col-xs-offset-3">
+                <button ng-show="!hasMore" ng-click="loadMore()" class=" btn btn-success btn-block">加载更多内容</button>
+                <div ng-show="hasMore">已没有更多内容</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>

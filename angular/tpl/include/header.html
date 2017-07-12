@@ -1,0 +1,246 @@
+<div>
+
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!--导航条 品牌+汉堡包-->
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand"></a>
+                <a href="#menu" onclick="return false;" class="navbar-toggle" data-toggle="collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+            </div>
+            <!--大屏正常  小屏导航条折叠到汉堡包的部分-->
+            <div id="menu" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li ><a href="#/fw_main">首页</a></li>
+                    <li><a href="#/fw_game"> 游戏代理</a></li>
+                    <li><a href="#/fw_case">公司案例</a></li>
+                    <li><a href="#/fw_exp">用户感想</a></li>
+                    <li><a href="#/fw_order" ng-click="gr()">个人订单</a></li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <div class="form-group has-feedback search ">
+                            <input type="text" ng-keypress="kw()" class="form-control navbar-form" id="kw"
+                                   placeholder="请输入您需要的服务">
+                            <span class="form-control-feedback glyphicon glyphicon-search"></span>
+                        </div>
+                        <div ng-show="ykw!=null">
+                            <ul>
+                                <li ng-repeat="hang in fh">{{hang.caption}}</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li ng-show="nav_hy==0">
+                        <a onclick="return false;" ng-click="nav_dl()" data-toggle="modal" href="#myModal1">登录</a>
+                        <span>|</span>
+                        <a onclick="return false;" ng-click="nav_zc();yz()" data-toggle="modal" href="#myModal1">注册</a>
+                    </li>
+                    <li ng-show="nav_hy==1">
+                        <img ng-src="{{}}" alt=""/>
+                        欢迎回来{{gname}}<a href="" ng-click="zx()" onclick="return false;">注销登录</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" ng-show="modal" id="myModal1" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="{{top_dl}}"><a data-target="#dl" ng-click="denglu()"
+                                                                      aria-controls="home" role="tab"
+                                                                      data-toggle="tab">登录</a></li>
+                        <li role="presentation" class="{{top_zc}}"><a data-target="#zc" ng-click="yz();tp();zhuce()"
+                                                                      aria-controls="profile" role="tab"
+                                                                      data-toggle="tab">注册</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane {{top_dl}}" id="dl">
+                            <form id="form-denglu" class="form-horizontal">
+                                <div class="form-group"> <!-- 行-->
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">用户名：</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input id="gname" class="form-control" placeholder="输入用户名" required=""
+                                               pattern="\w{6,12}">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="help-block">6-12位数字或者字母</span>
+                                    </div>
+                                </div>
+                                <div class="form-group"> <!-- 行-->
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">密码：</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input id="gpwd" type="password" placeholder="输入密码" class="form-control"
+                                               required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="help-block">请输入6-8位数字密码</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <span class="col-md-4 col-xs-1"></span>
+
+                                    <div><input type="checkbox"> <span>你是否记住账号</span></div>
+                                </div>
+                                <div class="form-group">
+                                    <span class="col-md-2"></span>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <span class="col-md-2"></span>
+                                    <button type="reset" ng-click="dl()" class="btn btn-primary">登录</button>
+                                    <div class="col-md-12">
+                                        <div ng-show="pd=='1'">
+                                            <span class="text-success glyphicon glyphicon-ok"></span><span>登录成功！马上跳转主页面</span>
+                                        </div>
+                                        <div ng-show="pd=='0'">
+                                            <span class="text-danger glyphicon glyphicon-remove"></span><span>用户名密码有误，请重新登录！</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane {{top_zc}}" id="zc">
+                            <div class="tab-content modal-body">
+                                <div id="zhuce" class="tab-pane active">
+                                    <form id="form-zhuce" class="form-horizontal">
+                                        <div class="form-group"> <!-- 行-->
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2">
+                                                <label class="control-label">用户名</label>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <input id="uname" name="uname" type="text" class="form-control"
+                                                       required=""
+                                                       pattern="\w{6,12}">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="help-block">6-12位数字或者字母</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group"> <!-- 行-->
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2">
+                                                <label class="control-label">密码</label>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <input id="upwd" name="upwd" type="password" class="form-control"
+                                                       required="" pattern="\d{6,8}">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="help-block">请输入6-8位数字密码</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group"> <!-- 行-->
+
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <label class="control-label">确认密码</label>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <input id="upwds" name="upwd" type="password" class="form-control"
+                                                       required="" pattern="\d{6,8}">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="help-block">再次输入密码</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group"> <!-- 行-->
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2">
+                                                <label class="control-label">验证码</label>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <input id="uyz" type="text" class="form-control" required="">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <canvas id="yan" ng-click="yz()" width="150px" height="34px"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="form-group"> <!-- 行-->
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2">
+                                                <label class="control-label">头像</label>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <input id="urls" type="text" disabled class="form-control"
+                                                       placeholder="将图片拖入右边区域">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div style="display:inline-block;height:40px;width:40px;border:1px solid #eeeeee"
+                                                     id="box"></div>
+                                                <span style="font-size:6px">（非必填）图片大小不要超过2M</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="col-md-2"></span>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                            </button>
+                                            <span class="col-md-2"></span>
+                                            <button type="reset" class="btn btn-primary" ng-click="zc();yz()">注册
+                                            </button>
+                                            <div class="col-md-12">
+                                                <div ng-show="panduan=='1'">
+                                                    <span class="text-success glyphicon glyphicon-ok"></span><span>注册成功！马上跳转登录页面</span>
+                                                </div>
+                                                <div ng-show="panduan=='0'">
+                                                    <span class="text-danger glyphicon glyphicon-remove"></span><span>请重新注册！</span>
+                                                </div>
+                                                <div ng-show="panduan=='-1'">
+                                                    <span class="text-danger glyphicon glyphicon-remove"></span><span>两次密码不同！请重新输入</span>
+                                                </div>
+                                                <div ng-show="panduan=='2'">
+                                                    <span class="text-danger glyphicon glyphicon-remove"></span><span>用户名已被使用！</span>
+                                                </div>
+                                                <div ng-show="panduan=='3'">
+                                                    <span class="text-danger glyphicon glyphicon-remove"></span><span>验证码有误！</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="kw_modal" ng-show="kw_m" ng-click="kw_modal()">
+        <div class="kw_kk" ng-show="kw_m">
+            <div class="list-group">
+                <a ng-repeat="ss in hf" class="list-group-item" href="#/fw_detail/{{ss.aid}}">{{ss.caption}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="gd hidden-xs">
+        <a href="#/fw_main" title="首页">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+        <br/>
+        <a href="#/fw_case" title="生活服务区">
+            <span class="glyphicon glyphicon-lock"></span>
+        </a>
+        <br/>
+        <a href="#/fw_game" title="游戏代理区">
+            <span class="glyphicon glyphicon-blackboard"></span>
+        </a>
+        <br/>
+        <a href="#/fw_exp" title="用户交流区">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    </div>
+
+</div>

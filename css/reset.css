@@ -1,0 +1,32 @@
+@charset "utf-8";
+*{
+   margin: 0;
+   padding:0;
+}
+body{
+    
+   font: 1.3em "microsoft yahei", Arial, Helvetica, sans-serif;
+   color:#666;
+   margin:0px;
+   padding:0px;
+   overflow-x: hidden;
+}
+ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd{
+   margin:0px;
+   padding:0px;
+   border:none;
+   list-style:none;
+}
+input {border:none;}
+.lf{float:left;}
+.rg{float:right;}
+.clean:after{
+   content:"";
+   display:block;
+   clear:both;
+}
+a{text-decoration:none;}
+img{vertical-align:middle;}
+textarea{
+    resize:none;
+}

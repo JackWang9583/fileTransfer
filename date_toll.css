@@ -1,0 +1,50 @@
+#date_choose_box{
+    width: 400px;
+    padding:20px 0;
+    background: gray;
+    padding: 0;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#date_choose_box .date_header{
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+#date_choose_box .reduce,#date_choose_box .add{
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#date_choose_box .reduce{
+    left: 20px;
+}
+#date_choose_box .add{
+    right: 20px;
+}
+#date_choose_box>ul{
+    width:100%;
+    list-style: none;
+    overflow: hidden;
+    padding: 20px;
+}
+#date_choose_box>ul>li{
+    width: 14.28571428%;
+    float: left;
+    padding: 10px;
+    text-align: center;
+}
+#date_choose_box>ul>li.day{
+    border-radius: 50%;
+}
+#date_choose_box>ul>li.day:hover{
+    background: red;
+}
+#date_choose_box>ul>li.really{
+    color: green;
+}

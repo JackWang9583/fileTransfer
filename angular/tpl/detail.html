@@ -1,0 +1,30 @@
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="container my_top" style="margin-top:60px;">
+
+    <ul class="breadcrumb">
+        <li>
+            <a href="#/fw_main">首页</a>
+        </li>
+        <li>
+            详情
+        </li>
+    </ul>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3>{{dish.caption}}</h3>
+            <div>
+            <img ng-src="img/{{dish.aphoto}}" class="img-thumbnail" alt="1111">
+
+            </div>
+            <p>{{dish.acontent}}</p>
+            <p>{{dish.price | currency:'￥'}}</p>
+        </div>
+        <div class="clearfix" style="margin-bottom:10px;margin-right:10px;">
+            <button ng-click="jump('/fw_main')" class="btn btn-primary pull-right">我再看看</button>
+            <a ng-show="nav_hy==0" onclick="return false;" ng-click="nav_dl()" class="btn btn-success pull-right" style="margin-right:5px;" data-toggle="modal" href="#myModal1">请先登录</a>
+            <button ng-show="nav_hy==1" ng-click="tj()" class="btn btn-success pull-right" style="margin-right:5px;">添加订单</button>
+        </div>
+    </div>
+
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>

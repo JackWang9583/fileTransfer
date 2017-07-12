@@ -1,0 +1,101 @@
+body{
+    background: #ddd;
+}
+#section{
+    padding: 10px;
+    border-bottom: 2px solid gray;
+    background: #F5F5F5;
+}
+#section>span{
+    float: left;
+    padding-left: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: gray;
+}
+#section>p{
+    float: right;
+}
+#section>p span{
+    color: red;
+    font-weight: bold;
+}
+#section>p input{
+    padding:5px 10px;
+    background: gray;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    outline: none;
+}
+#product{
+    padding: 20px 0px;
+}
+#product li{
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+#product .list_head{
+    height: 35px;
+    line-height: 35px;
+    color: #2A643C;
+}
+.choose_box{
+    position: absolute;
+    top: 20px;left: 5px;
+    width: 15px;
+    height: 15px;
+    line-height: 8px;
+    color: red;
+    font-weight: bold;
+    font-size: 1.7em;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+.list_head .choose_box{
+    top: 50%;
+    transform: translateY(-50%);
+}
+.list{
+    padding: 20px 0;
+    border-bottom: 2px solid gray;
+    border-top: 2px solid gray;
+    background: #fff;
+}
+.list .count{
+    width: 30px;
+    height: 20px;
+    border: 1px solid gray;
+    text-align: center;
+    outline: none;
+    float: left;
+    margin:0 5px;
+}
+.reduce,.add{
+    width: 20px;
+    height: 20px;
+    line-height: 15px;
+    border: 1px solid gray;
+    float: left;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #fff;
+    background: gray;
+    cursor: pointer;
+}
+.list img{
+    width: 80%;
+}
+.my-delet{
+    background: #fff;
+    border: none;
+    outline: none;
+    color: #e4393c;
+}
+#product .list.active{
+    background: #FFF8E1;
+}

@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding-bottom: 50px;
+}
+.nav.pull-right > li > a {
+  display: inline-block;
+  padding: 15px 2px;
+}
+.box img {
+  width: 100%;
+}
+.kw_modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  padding-left: 20%;
+  padding-top: 10%;
+}
+.kw_kk {
+  position: absolute;
+  width: 60%;
+  top: 15%;
+  bottom: 10%;
+  margin-top: 10px;
+  background: #fff;
+  z-index: 15;
+}
+.gd {
+  position: fixed;
+  text-align: center;
+  bottom: 10%;
+  background: #eee;
+  z-index: 100;
+}
+@media screen and (min-width: 992px) {
+  .gd {
+    width: 40px;
+    right: 10px;
+    height: 160px;
+    line-height: 40px;
+  }
+}
+.my_top {
+  margin-top: 50px!important;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .my_top {
+    margin-top: 107px!important;
+  }
+  .gd {
+    width: 30px;
+    right: 10px;
+    height: 120px;
+    line-height: 30px;
+  }
+}
+.tab > a {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  line-height: 50px;
+}
+.tab :nth-child(3) {
+  position: relative;
+  bottom: 5px;
+  background: #ffa010;
+}

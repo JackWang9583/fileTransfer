@@ -1,0 +1,143 @@
+SET NAMES UTF8;
+DROP DATABASE IF EXISTS lol;
+CREATE DATABASE lol CHARSET=utf8;
+use lol;
+
+CREATE TABLE banner(
+id int primary key auto_increment,
+msg varchar(20),
+pic varchar(200),
+timer BIGINT
+);
+INSERT INTO banner VALUES
+(null,"源计划——雷","img/banner/1.png",now()),
+(null,"源计划——火","img/banner/2.png",now()),
+(null,"源计划——林","img/banner/3.png",now()),
+(null,"源计划——雄心","img/banner/4.png",now()),
+(null,"源计划——山","img/banner/5.png",now()),
+(null,"源计划——阴","img/banner/6.png",now()),
+(null,"源计划——联合","img/banner/7.png",now()),
+(null,"源计划——自由","img/banner/8.png",now()),
+(null,"源计划——风","img/banner/9.png",now());
+
+
+CREATE TABLE intro_history(
+id int primary key auto_increment,
+name varchar(10),
+msg varchar(200),
+pic varchar(500),
+time BIGINT
+);
+INSERT INTO intro_history VALUES
+(null,"德玛西亚","人类城邦德玛西亚坐落在瓦洛兰大陆的西部海岸，它是大陆
+上美德的典范。它的光辉闪耀着其他人类居住地。德玛西亚人民的共同目标是通过善良和正义让所有人都过得更好。","img/circle/1.jpg",now()),
+(null,"洛克萨斯","诺克萨斯如同它的风格一样黑暗凶险。城市建于花岗岩山脉之上，部分城区却又深入地底。建筑物耸立山巅或是深入山腹。城外令人望而生畏的人工护城河，注满了女巫邪恶腐臭的药剂。护城河成了隔绝外界访问的最佳屏障，仅留下少数几个重兵把守的关卡。居住在山顶的是诺克萨斯最高委员会总部，从远处看，这建筑就如同一个骷髅头。在城墙外躺着的是无法入住城内的穷人（或许他们才是幸运儿）。","img/circle/2.jpg",now()),
+(null,"均衡教派","均衡教派是一个存在久远的上古教派，位于瓦罗兰大陆东北的岛国艾欧尼亚；致力于维护万物平衡。他们认为，规则与混乱、光明与黑暗，万物必须和谐共存，这才是宇宙的真理。而他们维护世界平衡的神圣使命则由三个暗影战士（凯南、慎、阿卡丽）来执行。","img/circle/3.jpg",now()),
+(null,"战争学院","战争学院是英雄联盟裁决瓦罗然政治纠纷之地。这里是绝对中立的领土，严禁任何纷争，违反者将面对学院的士兵和魔法。学院坐落于一座巨型能量节点，由黑曜石、贵金属和魔法塑形而成。它位于莫格罗恩关隘的北方入口，刚好位于相互敌对的城邦德玛西亚和诺克萨斯之间。作为一个旅行者，一定不要错过战争学院自北向南的超级堡垒，还有著名的巨石峰除了作为英雄联盟所在，战争学院大概是瓦罗然最重要的权威军事培训机构。很多图书馆都致力于收录战争学院的英雄信息，并向所有研究者开放。","img/circle/4.jpg",now());
+
+
+CREATE TABLE intro_hero(
+id int primary key auto_increment,
+name varchar(10),
+msg varchar(500),
+pic varchar(200),
+time BIGINT
+);
+INSERT INTO intro_hero VALUES
+(null,"狂野女猎手","奈德丽拥有非常出色的消耗能力，超远距离的标枪对于敌人来说防不胜防，更加可怕的是她变身为豹子形态后的超强爆发和机动性，是一个可玩性非常高的英雄。","img/circle/baonv.jpg",now()),
+(null,"探险家","探险家·伊泽瑞尔是《英雄联盟》中的一名英雄。一名非常灵活飘逸的英雄，双加成的技能使他不但可以走AD路线，也能作为法师走AP路线。","img/circle/ez.jpg",now()),
+(null,"光辉女郎","她是一个超远程的法师，一般走位不失误，对方很难能抓住她，所以拉克丝可以纯粹地堆自己的法伤。由于很难死掉，W技能又可以在队友那里轻易混到助攻，因此杀人书是非常适合拉克丝的装备。但拉克丝的缺点也很明显，技能CD时间长、技能需要预判、技能基础伤害低，这使得拉克丝成为一个顺风型英雄，你会发现逆风局的拉克丝几乎打不动人。","img/circle/guanghui.jpg",now()),
+(null,"荆棘之兴","她有一个独特的攻击、防御系统并以控制植物做为攻击防御的手段。她可以打出多种连招，利用不同种子的相互作用造成不一样的效果。她拥有着强大的爆发能力以及持续输出能力，并且控制手段繁多，反手能力很强，所以她既能胜任常规的AP位，也能够打辅助位。但是婕拉非常脆弱，没有任何逃生能力，并且QE比较考验技能的预判。","img/circle/jiela.jpg",now()),
+(null,"不祥之刃","不祥之刃-卡特琳娜是诺克萨斯的一名杰出的女刺客，诺克萨斯将军的女儿，也是魔蛇之拥-卡西奥佩娅的姐姐。卡特琳娜常活跃在中单AP的位置上，是优秀的法系输出者和团战收割者。","img/circle/kate.jpg",now()),
+(null,"机械公敌","兰博拥有机械重组、纵火盛宴、破碎护盾、电子鱼叉、恒温灼烧五项技能，大量的持续伤害并且没有消耗；非常棒的AoE和团战能力；短CD的护盾可以吸收很多伤害；保持好被动热量可以造成额外的伤害，在后期团战中可以起到决定性的作用。","img/circle/lanbo.jpg",now()),
+(null,"瓦洛兰之盾","塔里克曾是德玛西亚的一名军官，他生性浪漫，英俊迷人，却在一个夜里为了游览附近的神庙而离开了自己的驻地，导致他的手下遭人偷袭而全军覆没，他在无尽的悔恨中踏上了流放的旅途，他一路颠沛，来到了巨神峰脚下，只希望能在山巅找到救赎，他强忍着心中的内疚，艰难的攀上了峰顶，却与来自巨神峰的守护者不期而遇，在经受了考验之后，塔里克发现自己得到了守护之力的加持，并从此担上了保护瓦洛兰的重任。","img/circle/talike.jpg",now()),
+(null,"法外狂徒","他与崔斯特曾是赌局搭档，后被崔斯特出卖给祖安高官后入狱，越狱后誓要向昔日的盟友—崔斯特复仇。格雷福斯拥有非常独特的散弹枪机制和装弹机制，他的普攻可以造成范围伤害并且能被阻挡，在使用完两发散弹之后需要一定的时间装填子弹，他的技能爆发非常可观，是一个持续输出和爆发能力兼备的AD英雄。","img/circle/nanqiang.jpg",now()),
+(null,"刀锋意志","刀锋意志·艾瑞莉娅是竞技游戏《英雄联盟》里面的一个英雄角色，在故事里和盲僧李青、疾风剑豪亚索等英雄一样隶属于艾欧尼亚城邦，属于半肉半DPS类型的英雄。
+艾瑞莉娅是一个非常强的团战型英雄，可以担当战士，刺客和坦克多种身份。取得优势艾瑞莉娅可以输出成吨的伤害，而且魔法和物理的混合伤害也让对面英雄非常难处理。","img/circle/nvdao.jpg",now());
+
+
+CREATE TABLE intro_skin(
+id int primary key auto_increment,
+pic varchar(200),
+timer BIGINT
+);
+INSERT INTO intro_skin VALUES
+(null,"img/skin/1.jpg",now()),
+(null,"img/skin/2.jpg",now()),
+(null,"img/skin/3.jpg",now()),
+(null,"img/skin/4.jpg",now()),
+(null,"img/skin/5.jpg",now()),
+(null,"img/skin/6.jpg",now()),
+(null,"img/skin/7.jpg",now()),
+(null,"img/skin/8.jpg",now()),
+(null,"img/skin/9.jpg",now());
+
+
+
+
+CREATE TABLE lol_product(
+pid int primary key auto_increment,
+pname varchar(100),
+price float(10,2),
+pic varchar(100)
+);
+INSERT INTO lol_product VALUES
+(null,"皎月女神-戴安娜",69.00,"img/skin/1.jpg"),
+(null,"腥红之月-烬",69.00,"img/skin/2.jpg"),
+(null,"魔法少女-暴走萝莉",69.00,"img/skin/3.jpg"),
+(null,"魔法少女-仙灵女巫",69.00,"img/skin/4.jpg"),
+(null,"魔法少女-圣锤之毅",69.00,"img/skin/5.jpg"),
+(null,"魔法少女-风暴之眼",99.00,"img/skin/6.jpg"),
+(null,"暗杀星",99.00,"img/skin/7.jpg"),
+(null,"SKT1",99.00,"img/skin/8.jpg"),
+(null,"腥红之月-卡牌大师",99.00,"img/skin/9.jpg"),
+(null,"杰斯",99.00,"img/skin/10.jpg"),
+(null,"至高之拳-盲僧",99.00,"img/skin/11.jpg"),
+(null,"死兆星-锤石",99.00,"img/skin/12.jpg"),
+(null,"勇敢的心-德莱厄斯",69.00,"img/skin/13.jpg"),
+(null,"死亡征兆-卡兹特",39.00,"img/skin/14.jpg"),
+(null,"亡灵恐惧-典狱长",39.00,"img/skin/15.jpg"),
+(null,"死亡恐惧-普朗东",39.00,"img/skin/16.jpg"),
+(null,"电玩勇者-瑞文",39.00,"img/skin/17.jpg"),
+(null,"战地机甲-虚空之口",39.00,"img/skin/18.jpg"),
+(null,"死兆星-奥瑞利安",39.00,"img/skin/19.jpg"),
+(null,"勇敢的心-阿狸",39.00,"img/skin/20.jpg"),
+(null,"丧尸狂潮",39.00,"img/skin/21.jpg"),
+(null,"幽魂新娘-莫甘娜",69.00,"img/skin/22.jpg"),
+(null,"死亡恐惧-火男",129.00,"img/skin/23.jpg"),
+(null,"电玩勇者-赫卡里姆",129.00,"img/skin/24.jpg"),
+(null,"嫦娥-戴安娜",129.00,"img/skin/25.jpg"),
+(null,"龙的传人-泰隆",129.00,"img/skin/26.jpg"),
+(null,"冠军之意-卡莉斯塔",129.00,"img/skin/27.jpg"),
+(null,"机械公敌-兰博",129.00,"img/skin/28.jpg"),
+(null,"暗黑之力-沃里克",199.00,"img/skin/29.jpg"),
+(null,"巧克力工坊-波比",199.00,"img/skin/30.jpg"),
+(null,"死兆星-不详魔灵",199.00,"img/skin/31.jpg"),
+(null,"电玩勇者-琴瑟仙女",199.00,"img/skin/32.jpg");
+
+CREATE TABLE lol_user(
+uid int primary key auto_increment,
+uname varchar(20),
+upwd varchar(16)
+);
+INSERT INTO lol_user VALUES
+(null,"qiangdong","123456"),
+(null,"naicha","456789");
+
+CREATE TABLE lol_cart(
+cid int primary key auto_increment,
+userId int
+);
+INSERT INTO lol_cart VALUES
+(null,1);
+
+CREATE TABLE lol_cart_detail(
+did int primary key auto_increment,
+cartId int,
+productId int,
+count int
+);
+INSERT INTO lol_cart_detail VALUES
+(null,1,15,3),
+(null,1,18,1),
+(null,1,21,2);

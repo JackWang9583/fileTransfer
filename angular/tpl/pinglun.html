@@ -1,0 +1,37 @@
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="container my_top" style="margin-top:60px;">
+    <div class="panel panel-default"  style="margin-top:60px;">
+        <div class="panel-heading clearfix">
+            <h5 class="pull-left">
+                发表评论
+            </h5>
+            <a class="pull-right" href="#/fw_exp">更多>></a>
+        </div>
+        <div class="panel-body">
+            <div class="list-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                评论内容：
+                            </div><div class="col-sm-10">
+                                 <textarea id="fb" style="width:100%;min-height:80px;"></textarea>
+                        </div>
+                            <div class="col-md-12">
+                                <ul class="pull-right list-unstyled">
+                                    <li ng-show="nav_hy==0">
+                                        <a onclick="return false;" ng-click="nav_dl()" class="btn btn-primary" data-toggle="modal" href="#myModal1">请先登录再发表</a>
+                                    </li>
+                                    <li ng-show="nav_hy==1">
+                                        <a href="" ng-click="fb()" class="btn btn-success" onclick="return false;">发表评价</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>

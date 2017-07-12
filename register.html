@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 道具城－产品列表 </title>
+        <meta charset="utf-8"/>
+    </head>
+    <link rel="stylesheet" href="css/register.css">
+    <body>
+        <div id="box">
+            <h2>欢迎注册</h2>
+            <form action="" id="register-form">
+                <div id="userName" class="container">
+                    <label>用 户 名</label>
+                    <input type="text" name="uname" class="textput" placeholder="请输入用户名" autocomplete="off" maxlength="12">
+                    <i class="unameCheck"></i>
+                </div>
+                <p class="unameMsg"></p>
+                <div id="userPwd" class="container">
+                    <label>设置密码</label>
+                    <input type="password" name="upwd" class="textput" placeholder="请输入密码" autocomplete="off" minlength="6" maxlength="20">
+                    <i class="upwdCheck_1"></i>
+                </div>
+                <p class="upwdMsg"></p>
+                <div id="checkuserPwd" class="container">
+                    <label>再次密码</label>
+                    <input type="password" name="upwd" class="textput" placeholder="请输入密码" autocomplete="off" minlength="6" maxlength="20">
+                    <i class="upwdCheck_2"></i>
+                </div>
+                <p class="checkpwd"></p>
+                <div id="check" class="container">
+                    <label>验 证 码</label>
+                    <input type="text" class="checkput" placeholder="请输入验证码" autocomplete="off" maxlength="12"> 
+                    <canvas id="canvas" width="119" height="52"></canvas>
+                </div>
+                <p class="valueMsg"></p>
+                <input type="button" value="注 册" id="bt-register">
+            </form>
+        </div>
+        <div class="my_alert">
+            <label for="">dasdsads</label>
+            <label for=""></label>
+        </div>
+        <script src="js/jquery-1.11.3.js"></script>
+        <script src="js/register.js"></script>
+    </body>
+</html>
